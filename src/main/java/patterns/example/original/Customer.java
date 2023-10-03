@@ -1,8 +1,8 @@
-package patterns.example;
+package patterns.example.original;
 
 import java.util.List;
 
-import static patterns.example.Movie.MovieType.NEW_RELEASE;
+import static patterns.example.original.Movie.MovieType.NEW_RELEASE;
 
 @SuppressWarnings("StringConcatenationInLoop")
 class Customer {

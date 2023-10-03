@@ -1,4 +1,4 @@
-package patterns.example;
+package patterns.example.original;
 
 class Rental {
     private final Movie movie;

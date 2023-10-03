@@ -1,4 +1,4 @@
-package patterns.example;
+package patterns.example.original;
 
 public class Movie {
     private final String title;
