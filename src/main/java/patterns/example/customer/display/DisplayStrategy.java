@@ -25,6 +25,23 @@ public interface DisplayStrategy {
     };
 
     DisplayStrategy HTML = (rentals, name) -> {
-        return "HTML placeholder";
+        double totalAmount = 0;
+        int frequentRenterPoints = 0;
+        StringBuilder result = new StringBuilder("<body>\n<h1>Rental Record for " + name + "</h1>\n");
+        result.append("<ul>");
+        for (Rental rental : rentals) {
+            double thisAmount = rental.calculateAmount();
+            frequentRenterPoints += rental.calculateFrequentRenterPoints();
+            //show figures for this rental
+            result.append("<li>\t").append(rental.getMovieTitle()).append("\t").append(thisAmount).append("</li>\n");
+            totalAmount += thisAmount;
+        }
+        result.append("</ul>\n</body>");
+        //add footer lines
+        result.append("\n<footer>\n");
+        result.append("<div>Amount owed is ").append(totalAmount).append("</div>\n");
+        result.append("<div>You earned ").append(frequentRenterPoints).append(" frequent renter points</div>");
+        result.append("\n</footer>");
+        return result.toString();
     };
 }

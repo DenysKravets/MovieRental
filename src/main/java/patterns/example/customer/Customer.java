@@ -35,4 +35,11 @@ public class Customer {
     public List<Rental> getRentals() {
         return new ArrayList<>(rentals);
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

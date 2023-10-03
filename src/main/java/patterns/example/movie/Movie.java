@@ -31,4 +31,11 @@ public abstract class Movie {
     public Map<String, String> movieDescriptions() {
         return movieDescriptions;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                '}';
+    }
 }
